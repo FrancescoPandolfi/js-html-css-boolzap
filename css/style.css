@@ -35,8 +35,7 @@ body:before {
 
 /* LEFT WINDOW */
 .left-window {
-  width: 40%;
-  padding: 
+  width: 35%;
   background: red;
   border-right: 1px solid #DCDBDC;
 }
@@ -45,28 +44,54 @@ body:before {
 .row1-left {
   width: 100%;
   height: 60px;
+  padding: 0 20px;
   display: flex;
   background-color: #EAEAEA;
 }
   .user-icon {
     margin-right: auto;
-    background-color: green;
   }
     .user-icon img {
       height: calc(100% - 20px);
       margin: 10px 0;
     }
+  .icons-row1 {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+  }
 
-
-
-  .row1-icons {
+/* Row 2 left */
+.row2-left {
+  width: 100%;
+  height: 90px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  background: #88DDFC;
+}
+  .icon-notifiche {
 
   }
+  .row2-left-text {
+
+  }
+
+  /* Row 3 left search */
+  .row3-left-search {
+    width: 100%;
+    height: 90px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    background: #88DDFC;
+  }
+
 
 
 
 /* RIGHT WINDOW */
 .right-window {
-  width: 60%;
+  width: 65%;
   background: blue
 }
