@@ -9,9 +9,6 @@ input {
   border: 0;
 }
 
-.d-none {
-  display: none;
-}
 
 body {
   background: #D4D6CE;
@@ -185,7 +182,8 @@ body:before {
       flex-grow: 1;
       background-image: url("../img/bg.png");
       background-size: 520px;
-      padding: 0 80px 20px;;
+      padding: 0 80px 20px;
+      overflow-y: scroll;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -211,6 +209,17 @@ body:before {
         p.right {
           background-color: #D4F7C1;
         }
+
+
+        /* message-template */
+        .template {
+          display: flex;
+          justify-content: flex-end;
+        }
+        p.message-sent {
+          background-color: #D4F7C1;
+        }
+
 
 
 
@@ -246,3 +255,8 @@ body:before {
         .send-message-icons {
           margin-left: 20px;
         }
+
+/* DISPLAY */
+.d-none {
+display: none;
+}

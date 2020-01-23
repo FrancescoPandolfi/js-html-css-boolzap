@@ -10,11 +10,15 @@ $(document).ready(function () {
   //   $('.send-icon').hide();
   // });
 
-$(document).on('click', '.send-icon', function() {
-  var myMessage = $('my-message').clone();
-  console.log(myMessage.html());
+  $(document).on('click', '.send-icon', function() {
+    var templateCopy = $('.message-window + .template').clone();
+    var typedMessage = $('.mex').val();
 
-});
+    templateCopy.children().text(typedMessage);
+    $('.message-window').append(templateCopy);
+    $('.message-window .template').removeClass('d-none');
+
+  });
 
 
 
