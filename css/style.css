@@ -5,6 +5,11 @@
   font-family: 'Oxygen', sans-serif;
 }
 
+input {
+  border: 0;
+}
+
+
 body {
   background: #D4D6CE;
 }
@@ -106,14 +111,11 @@ body:before {
       height: 72px;
     }
 
-
-
-
-
 /* RIGHT WINDOW */
 .right-window {
   width: 65%;
-  background: blue
+  display: flex;
+  flex-direction: column;
 }
     /* Row 1 right */
     .row1-right {
@@ -125,8 +127,40 @@ body:before {
     }
         .user-icon-right {
         }
+        .user-icon-right img {
+          height: calc(100% - 20px);
+          margin: 10px 0;
+        }
 
         .row1-right-text {
           flex-grow: 1;
-          background-color: black;
+        }
+
+    /* Message window */
+    .message-window {
+      flex-grow: 1;
+      background-image: url("../img/bg.png");
+      background-size: 520px;
+    }
+
+    /* Send Message bar*/
+    .send-message-bar {
+      height: 62px;
+      width: 100%;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      background-color: #EEEEEE;
+    }
+        .emoticons-icon {
+          margin-right: 20px;
+        }
+        .input-message-bg {
+          height: 42px;
+          border-radius: 42px;
+          background-color: #FFFFFF;
+          flex-grow: 1;
+        }
+        .send-message-icons {
+          margin-left: 20px;
         }
