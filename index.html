@@ -38,12 +38,12 @@
 
       <!-- Row 2 left -->
       <div class="row2-left">
-        <div class="icon_notifiche">
+        <div class="icon-notifiche">
           <img src="img/notifiche.svg" alt="utente1">
         </div>
         <div class="row2-left-text">
           <p>Ricevi notifiche di nuovi messaggi</p>
-          <p>Attiva notifiche desktop <img src="img/svgexport-5.svg" alt=""></p>
+          <p>Attiva notifiche desktop<img src="img/arrow.svg" alt=""></p>
         </div>
       </div> <!-- close row2-left -->
 
@@ -64,7 +64,7 @@
         <div class="users">
           <img src="img/utenti/utente2.png" alt="">
           <div class="row4-text">
-            <h4>Francesco</h4>
+            <h4>Matilde</h4>
             <p>Non poteva essere altrimenti</p>
           </div>
           <div class="row4-time">
@@ -72,7 +72,7 @@
           </div>
         </div>
         <div class="users">
-          <img src="img/utenti/utente2.png" alt="">
+          <img src="img/utenti/utente3.png" alt="">
           <div class="row4-text">
             <h4>Francesco</h4>
             <p>Non poteva essere altrimenti</p>
@@ -82,7 +82,17 @@
           </div>
         </div>
         <div class="users">
-          <img src="img/utenti/utente2.png" alt="">
+          <img src="img/utenti/utente4.png" alt="">
+          <div class="row4-text">
+            <h4>Antonio</h4>
+            <p>Non poteva essere altrimenti</p>
+          </div>
+          <div class="row4-time">
+            <p>12.25</p>
+          </div>
+        </div>
+        <div class="users">
+          <img src="img/utenti/utente5.png" alt="">
           <div class="row4-text">
             <h4>Francesco</h4>
             <p>Non poteva essere altrimenti</p>
@@ -92,7 +102,7 @@
           </div>
         </div>
         <div class="users">
-          <img src="img/utenti/utente2.png" alt="">
+          <img src="img/utenti/utente6.png" alt="">
           <div class="row4-text">
             <h4>Francesco</h4>
             <p>Non poteva essere altrimenti</p>
@@ -102,7 +112,7 @@
           </div>
         </div>
         <div class="users">
-          <img src="img/utenti/utente2.png" alt="">
+          <img src="img/utenti/utente7.png" alt="">
           <div class="row4-text">
             <h4>Francesco</h4>
             <p>Non poteva essere altrimenti</p>
@@ -112,7 +122,7 @@
           </div>
         </div>
         <div class="users">
-          <img src="img/utenti/utente2.png" alt="">
+          <img src="img/utenti/utente8.png" alt="">
           <div class="row4-text">
             <h4>Francesco</h4>
             <p>Non poteva essere altrimenti</p>
@@ -122,17 +132,7 @@
           </div>
         </div>
         <div class="users">
-          <img src="img/utenti/utente2.png" alt="">
-          <div class="row4-text">
-            <h4>Francesco</h4>
-            <p>Non poteva essere altrimenti</p>
-          </div>
-          <div class="row4-time">
-            <p>12.25</p>
-          </div>
-        </div>
-        <div class="users">
-          <img src="img/utenti/utente2.png" alt="">
+          <img src="img/utenti/utente9.png" alt="">
           <div class="row4-text">
             <h4>Francesco</h4>
             <p>Non poteva essere altrimenti</p>
@@ -156,7 +156,7 @@
           <img src="img/utenti/utente2.png" alt="Immagine del contatto">
         </div>
         <div class="row1-right-text">
-          <p>Francesco</p>
+          <h4>Matilde</h4>
           <p>Ultimo accesso oggi alle 15:30</p>
         </div>
 
@@ -173,21 +173,33 @@
 
       <!-- Message window -->
       <div class="message-window">
-        <div class="contact-message">
-          <p class="box-message left">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+
+        <div class="message-wrapper left">
+          <p class="box-message">Hey, ciao come stai?</p>
+          <div class="arrow-down d-none">
+            <img src="img/svgexport-42.svg" alt="">
+          </div>
+          <div class="message-hour">12.25</div>
         </div>
-        <div class="my-message">
-          <p class="box-message right">Bene, grazie</p>
+
+        <div class="message-wrapper right">
+          <p class="box-message">Bene, grazie</p>
+          <div class="arrow-down d-none">
+            <img src="img/svgexport-42.svg" alt="">
+          </div>
+          <div class="message-hour">12.27</div>
         </div>
 
       </div><!-- Close Message window -->
 
-      <!--  template************** -->
-      <div class="template d-none">
-        <p class="box-message message-sent"></p>
-      </div><!-- close template************** -->
+      <!--  ************** Message template ************** -->
+      <div class="message-wrapper right d-none">
+        <p class="box-message"></p>
+        <div class="arrow-down d-none">
+          <img src="img/svgexport-42.svg" alt="">
+        </div>
+        <div class="message-hour">12.27</div>
+      </div><!-- ************** close template************** -->
 
       <!-- Send Message bar -->
       <div class="send-message-bar">
