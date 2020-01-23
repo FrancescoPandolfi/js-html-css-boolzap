@@ -15,7 +15,7 @@ body {
 }
 body:before {
   content: '';
-  height: 110px;
+  height: 130px;
   width: 100%;
   background: #008B7D;
   position: fixed;
@@ -163,12 +163,13 @@ body:before {
       height: 60px;
       padding: 0 20px;
       display: flex;
+      align-items: center;
       background-color: #EAEAEA;
     }
         .user-icon-right {
         }
         .user-icon-right img {
-          height: calc(100% - 20px);
+          height: 40px;
           margin: 10px 0;
         }
 
@@ -181,7 +182,35 @@ body:before {
       flex-grow: 1;
       background-image: url("../img/bg.png");
       background-size: 520px;
+      padding: 0 80px 20px;;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
+        .contact-message {
+          display: flex;
+          justify-content: flex-start;
+        }
+            p.left {
+              background-color: white;
+            }
+            p.box-message {
+              margin-top: 10px;
+              padding: 10px;
+              border-radius: 8px;
+              max-width: 520px;
+            }
+
+        .my-message {
+          display: flex;
+          justify-content: flex-end;
+        }
+        p.right {
+          background-color: #D4F7C1;
+        }
+
+
+
 
     /* Send Message bar*/
     .send-message-bar {
@@ -199,8 +228,18 @@ body:before {
           height: 42px;
           border-radius: 42px;
           background-color: #FFFFFF;
+          display: flex;
+          align-items: center;
           flex-grow: 1;
+          padding-left: 20px;
         }
+            .input-message-bg input {
+              width: 95%;
+              font-size: 15px;
+              line-height: 20px;
+              color: #606060;
+            }
+
         .send-message-icons {
           margin-left: 20px;
         }
