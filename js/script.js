@@ -36,20 +36,17 @@ $(".mex").focus();
     $('.vocal-icon').show();
     $('.send-icon').hide();
 
+    // Invia un messaggio dopo un secondo
     setTimeout(function(){
       var mexReceivedTemplate = $('.message-window + .message-wrapper').clone();
       mexReceivedTemplate.children('p').text('Che fai di bello? 😀😀😀');
       mexReceivedTemplate.children('time').text(time);
       $('.message-window').append(mexReceivedTemplate);
       mexReceivedTemplate.removeClass('d-none').addClass('received');
-    }, 3000);
-
-
-
+    }, 1000);
   });
 
-
-
+// funzione per aggiungere uno zero sulla data
 function addZero(num) {
   if (num < 10) {
     num = '0' + num;
@@ -58,14 +55,13 @@ function addZero(num) {
 }
 
 
-
-
-//   $(".search").on("keyup", function() {
-//   var value = $(this).val().toLowerCase();
-//   $("#myTable tr").filter(function() {
-//     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-//   });
-// });
+  // Ogni volta che si inserisce una lettera nel campo input .search, parte la funzione che ricerca il testo inserito all'interno di tutti i div .users, nasconde quelli in cui non li trova
+  $(".search").on("keyup", function() {
+  var value = $(this).val().toLowerCase();
+  $(".users").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  });
+});
 
 
 
