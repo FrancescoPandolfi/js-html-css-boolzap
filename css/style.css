@@ -168,7 +168,9 @@ body:after {
       color: rgba(0, 0, 0, 0.45);
     }
 
-
+    .users.active {
+      background-color: #E8E8E8;
+    }
 
 /* RIGHT WINDOW */
 .right-window {
@@ -205,8 +207,9 @@ body:after {
 
     /* Message window */
     .message-window {
-      flex-grow: 1;
+      height: calc(100% - 122px);
       background-image: url("../img/bg.png");
+      background-color: #CED0C8;
       background-size: 520px;
       padding: 20px 80px;
       overflow-y: scroll;
@@ -255,8 +258,6 @@ body:after {
             }
 
 
-
-
         /* message-template */
         .template {
           display: flex;
@@ -301,6 +302,10 @@ body:after {
         .send-message-icons {
           margin-left: 20px;
         }
+            .send-icon:hover {
+              cursor: pointer;
+            }
+
 
 /* DISPLAY */
 .d-none {
