@@ -16,29 +16,56 @@ $(".mex").focus();
 
   // Azioni che si innescano al click dell'invio messaggio
   $(document).on('click', '.send-icon', function() {
-    var templateCopy = $('.message-window + .message-wrapper').clone();
+    var messageTemplate = $('.message-window + .message-wrapper').clone();
     var typedMessage = $('.mex').val();
 
-    templateCopy.children('p').text(typedMessage);
-    $('.message-window').append(templateCopy);
-    $('.message-window .message-wrapper').removeClass('d-none');
+    var data = new Date();
+    var hours = addZero(data.getHours());
+    var minutes = addZero(data.getMinutes());
+    var time = hours + ':' + minutes;
+
+    messageTemplate.children('p').text(typedMessage);
+    messageTemplate.children('time').text(time);
+
+    $('.message-window').append(messageTemplate);
+    messageTemplate.removeClass('d-none').addClass('sent');
+
     $('.mex').val('');
     $(".mex").focus();
 
     $('.vocal-icon').show();
     $('.send-icon').hide();
+
+    setTimeout(function(){
+      var mexReceivedTemplate = $('.message-window + .message-wrapper').clone();
+      mexReceivedTemplate.children('p').text('Che fai di bello? 😀😀😀');
+      mexReceivedTemplate.children('time').text(time);
+      $('.message-window').append(mexReceivedTemplate);
+      mexReceivedTemplate.removeClass('d-none').addClass('received');
+    }, 3000);
+
+
+
   });
 
-  // Azioni che si innescano all'hover del box messaggio inviato
-  $('.message-wrapper').mouseenter(function() {
-    $(this).children('.arrow-down').addClass('arrow-down-animation');
-    $(this).children('.arrow-down').removeClass('d-none');
-  });
-  $('.message-wrapper').mouseleave(function() {
-    $(this).children('.arrow-down').removeClass('arrow-down-animation');
-    $(this).children('.arrow-down').addClass('d-none');
-  });
 
+
+function addZero(num) {
+  if (num < 10) {
+    num = '0' + num;
+  }
+  return num;
+}
+
+
+
+
+//   $(".search").on("keyup", function() {
+//   var value = $(this).val().toLowerCase();
+//   $("#myTable tr").filter(function() {
+//     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+//   });
+// });
 
 
 

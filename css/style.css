@@ -227,11 +227,11 @@ body:after {
           color: #303030;
           position: relative;
         }
-        .left {
+        .received {
           background-color: white;
           align-self: flex-start;
         }
-        .right {
+        .sent {
           background-color: #D4F7C1;
           align-self: flex-end;
         }
@@ -240,16 +240,17 @@ body:after {
             .arrow-down {
               position: absolute;
               top: 5px;
-              right: 8px;
+              right: -3px;
+              opacity: 0;
             }
-            .arrow-down-animation {
-              animation: arrowDown 300ms ease forwards;
-            }
-            @keyframes arrowDown {
-              0% {right: -4px; opacity: 0}
-              100% {right: 8px;}
-            }
-            .message-hour {
+                .message-wrapper:hover > .arrow-down {
+                  top: 5px;
+                  right: 8px;
+                  opacity: 1;
+                  transition: all 0.3s ease-in-out;
+                }
+
+            .message-time {
               font-size: 11px;
               color: rgba(0, 0, 0, 0.45);
               position: absolute;
