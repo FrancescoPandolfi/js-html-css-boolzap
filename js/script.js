@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
-// Mette il focus sull'input principale appena apri il sito
-$(".mex").focus();
+  // Mette il focus sull'input principale appena apri il sito
+  $(".mex").focus();
+
 
   // Nasconde e mostra l'icona per inviare il messaggio
   $('.mex').on('keyup', function() {
@@ -15,15 +16,37 @@ $(".mex").focus();
   });
 
 
+
+
   $(document).on('click', '.send-icon', function() {
     sendMessage();
   });
 
   $(".mex").keyup(function(event) {
-    if (event.keyCode === 13 && $(".mex").val().length > 0) {
+    if (event.keyCode === 13 && $(this).val().length > 0) {
         sendMessage();
     }
-});
+  });
+
+  // Frasi casuali da inserire come risposta
+  var frasiCasuali = [
+    'Il dato relativo alla distribuzione spaziale degli ammassi globulari',
+    'Il modello di buco nero',
+    'purché non si dimentichi il principio di sovrapposizione',
+    'delinea due possibili soluzioni, l\'una teorica l\'altra osservativa',
+    'consente di avvicinare i grandi temi della cosmologia moderna',
+    'Il problema del big-bang',
+    'che nell\'astrofisica moderna giocano un ruolo sempre più essenziale.',
+    'e una sufficientemente e accurata determinazione dei campi gravitazionali'
+  ];
+
+  // Genera un numero random
+  function randomNum(num) {
+    var random = Math.floor(Math.random() * (num));
+    return random;
+  }
+
+
 
 // Azioni che si innescano al click dell'invio messaggio
 function sendMessage() {
@@ -50,13 +73,12 @@ function sendMessage() {
   // Invia un messaggio dopo un secondo
   setTimeout(function(){
     var mexReceivedTemplate = $('.message-window + .message-wrapper').clone();
-    mexReceivedTemplate.children('p').text('Che fai di bello? 😀😀😀');
+    mexReceivedTemplate.children('p').text(frasiCasuali[randomNum(frasiCasuali.length + 1)] + '😀');
     mexReceivedTemplate.children('time').text(time);
     $('.message-window').append(mexReceivedTemplate);
     mexReceivedTemplate.removeClass('d-none').addClass('received');
   }, 1000);
 };
-
 
 // funzione per aggiungere uno zero sulla data
 function addZero(num) {
