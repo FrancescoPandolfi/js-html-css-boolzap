@@ -16,8 +16,6 @@ $(document).ready(function () {
   });
 
 
-
-
   $(document).on('click', '.send-icon', function() {
     sendMessage();
   });
@@ -48,7 +46,7 @@ $(document).ready(function () {
 
 
 
-// Azioni che si innescano al click dell'invio messaggio
+// Funzione per Azioni che si innescano al click dell'invio messaggio
 function sendMessage() {
   var messageTemplate = $('.message-window + .message-wrapper').clone();
   var typedMessage = $('.mex').val();
@@ -73,10 +71,11 @@ function sendMessage() {
   // Invia un messaggio dopo un secondo
   setTimeout(function(){
     var mexReceivedTemplate = $('.message-window + .message-wrapper').clone();
-    mexReceivedTemplate.children('p').text(frasiCasuali[randomNum(frasiCasuali.length + 1)] + '😀');
+    mexReceivedTemplate.children('p').text(frasiCasuali[randomNum(frasiCasuali.length)] + ' 😀');
     mexReceivedTemplate.children('time').text(time);
     $('.message-window').append(mexReceivedTemplate);
     mexReceivedTemplate.removeClass('d-none').addClass('received');
+    // mexReceivedTemplate.children('dropdown-delete').addClass('left-mex')
   }, 1000);
 };
 
@@ -89,13 +88,13 @@ function addZero(num) {
 }
 
 
-  // Ogni volta che si inserisce una lettera nel campo input .search, parte la funzione che ricerca il testo inserito all'interno di tutti i div .users, nasconde quelli in cui non li trova
+  // Ogni volta che si inserisce una lettera nel campo input .search, parte la funzione che ricerca il testo inserito all'interno di tutti i div .users h4, nasconde quelli in cui non li trova
   $(".search").on("keyup", function() {
-  var value = $(this).val().toLowerCase();
-  $(".users").filter(function() {
-    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    var value = $(this).val().toLowerCase();
+    $(".users").filter(function() {
+      $(this).toggle($(this).find('h4').text().toLowerCase().indexOf(value) > -1)
+    });
   });
-});
 
 
 // row3-left-search
@@ -112,6 +111,34 @@ $(".search").focusout(function () {
   $('.icon-input img:last-child').hide();
   $(".row3-left-search").css( "background", "#F7F7F7" );
 });
+
+
+// Freccia delete del messaggio
+
+$(document).on('click', '.arrow-down', function() {
+  $('.dropdown-delete').addClass('d-none');
+  $(this).siblings('.dropdown-delete').removeClass('d-none');
+
+  if ($('.message-wrapper').hasClass('received')) {
+    $(this).siblings('.dropdown-delete').addClass('left-mex');
+  } else {
+    $(this).siblings('.dropdown-delete').addClass('right-mex');
+  }
+
+});
+
+
+
+
+
+// $('.message-window').on('click', function() {
+//   $('.dropdown-delete').addClass('d-none');
+//   });
+
+$('.delete').on('click', function() {
+  $(this).parents('.message-wrapper').remove();
+});
+
 
 
 

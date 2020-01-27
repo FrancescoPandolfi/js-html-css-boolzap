@@ -5,6 +5,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Oxygen', sans-serif;
+  list-style: none;
 }
 
 input {
@@ -13,6 +14,7 @@ input {
 input:focus {
   outline: none;
 }
+
 
 body {
   background: #D4D6CE;
@@ -29,6 +31,7 @@ body:after {
 }
 .window-wrapper {
   height: calc(100vh - 40px);
+  min-width: 992px;
   width: 1300px;
   margin: 20px auto;
   display: flex;
@@ -260,12 +263,35 @@ body:after {
               top: 5px;
               right: -3px;
               opacity: 0;
+              cursor: pointer;
             }
                 .message-wrapper:hover > .arrow-down {
                   top: 5px;
                   right: 8px;
                   opacity: 1;
                   transition: all 0.3s ease-in-out;
+                }
+                .dropdown-delete {
+                  position: absolute;
+                  background: #FFF;
+                  padding: 10px 0;
+                  border-radius: 4px;
+                  filter: drop-shadow(1px 1px 4px #c4c4c4);
+                  top: 25px;
+                  z-index: 5;
+                }
+                .dropdown-delete ul li {
+                  padding: 5px 15px;
+                }
+                .dropdown-delete ul li:hover {
+                  background: #eeeeee;
+                  cursor: pointer;
+                }
+                .left-mex {
+                  right: -100px;
+                }
+                .right-mex {
+                  right: -10px;;
                 }
 
             .message-time {
@@ -276,7 +302,6 @@ body:after {
               right: 4px;
             }
 
-
         /* message-template */
         .template {
           display: flex;
@@ -285,9 +310,6 @@ body:after {
         p.message-sent {
           background-color: #D4F7C1;
         }
-
-
-
 
 
     /* Send Message bar*/
