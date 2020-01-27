@@ -141,7 +141,7 @@ $(document).on('click', '.arrow-down', function() {
 
 });
 
-$('.delete').on('click', function() {
+$(document).on('click', '.delete', function() {
   $(this).parent().parent().parent('.message-wrapper').remove();
 });
 
@@ -172,15 +172,12 @@ $(document).on('click', '.users', function() {
   });
 
 
-// Cambia avatar e nome sulla conversazione
+  // Cambia avatar e nome sulla conversazione
+  var contenuto = $(this).find('h4').text();
+  $('.row1-right-text').find('h4').text(contenuto);
 
-var contenuto = $(this).find('h4').text();
-$('.row1-right-text').find('h4').text(contenuto);
-
-
-
-var img = $(this).find('img').attr('src');
-$('.user-icon-right').find('img').attr('src', img);
+  var img = $(this).find('img').attr('src');
+  $('.user-icon-right').find('img').attr('src', img);
 
 
 });
