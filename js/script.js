@@ -68,13 +68,16 @@ function sendMessage() {
   $('.vocal-icon').show();
   $('.send-icon').hide();
 
+  scrollMessage();
+
   // Invia un messaggio dopo un secondo
   setTimeout(function(){
-    var mexReceivedTemplate = $('.message-window + .message-wrapper').clone();
+    var mexReceivedTemplate = $('.message-window + .message-wrapper.d-none').clone();
     mexReceivedTemplate.children('p').text(frasiCasuali[randomNum(frasiCasuali.length)] + ' 😀');
     mexReceivedTemplate.children('time').text(time);
     $('.message-window.active-mex').append(mexReceivedTemplate);
     mexReceivedTemplate.removeClass('d-none').addClass('received');
+    scrollMessage();
   }, 1000);
 };
 
@@ -85,6 +88,18 @@ function addZero(num) {
   }
   return num;
 }
+
+
+// funzione che scrolla
+function scrollMessage() {
+   // altezza elemento conversazione attiva
+    var convoHeight = $('.message-window.active-mex').height();
+    console.log(convoHeight);
+    // spostiamo scroll di tutte le conversazioni
+    $('.message-window').scrollTop(convoHeight);
+}
+
+
 
 
   // Ogni volta che si inserisce una lettera nel campo input .search, parte la funzione che ricerca il testo inserito all'interno di tutti i div .users h4, nasconde quelli in cui non li trova
@@ -138,6 +153,8 @@ $(document).on('click', '.users', function() {
   // attiva e toglie la classe attiva nella lista contatti
   $('.users').removeClass('active');
   $(this).addClass('active');
+
+  // Sposta al primo posto il contatto cliccato
   $(this).prependTo($('.row4-left-users'));
 
 
@@ -158,10 +175,10 @@ $(document).on('click', '.users', function() {
 // Cambia avatar e nome sulla conversazione
 
 
-
-
-
 });
+
+
+
 
 
 
