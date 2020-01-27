@@ -136,16 +136,23 @@ $('.delete').on('click', function() {
 // Apre le diverse conversazioni
 $(document).on('click', '.users', function() {
 
+  // attiva e toglie la classe attiva nella lista contatti
   $('.users').removeClass('active');
   $(this).addClass('active');
 
-  var tabNum = $(this).attr('data-contact');
+  // rileva l'attributo degli elementi nella lista contatti
+  var userAtt = $(this).attr('data-contact');
 
+  // Toglie la classe attiva su tutti gli elementi
   $('.message-window').removeClass('active-mex');
-  $('.message-window').attr('data-contact').val(tabNum).addClass('active-mex');
-  // $('div[data-contact=1]').addClass('active-mex');
 
-  console.log(tabNum);
+  // controlla tutte le finestre messaggio e attiva solo quella selezionata
+  $('.message-window').each(function() {
+      if ($(this).attr('data-contact') == userAtt) {
+        $(this).addClass('active-mex')
+      }
+  });
+
 
 });
 
