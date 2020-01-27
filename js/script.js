@@ -28,12 +28,12 @@ $(document).ready(function () {
 
   // Frasi casuali da inserire come risposta
   var frasiCasuali = [
-    'Il dato relativo alla distribuzione spaziale degli ammassi globulari',
-    'Il modello di buco nero',
+    'prefigura una soluzione operativa del problema relativo alla forma delle galassie',
+    'rivela un grande valore euristico per il superamento di molte difficoltà sperimentali',
     'purché non si dimentichi il principio di sovrapposizione',
     'delinea due possibili soluzioni, l\'una teorica l\'altra osservativa',
     'consente di avvicinare i grandi temi della cosmologia moderna',
-    'Il problema del big-bang',
+    'e una stima anche superficiale dei possibili effetti di sincrotrone',
     'che nell\'astrofisica moderna giocano un ruolo sempre più essenziale.',
     'e una sufficientemente e accurata determinazione dei campi gravitazionali'
   ];
@@ -130,6 +130,25 @@ $(document).on('click', '.arrow-down', function() {
 $('.delete').on('click', function() {
   $(this).parents('.message-wrapper').remove();
 });
+
+
+
+// Apre le diverse conversazioni
+$(document).on('click', '.users', function() {
+
+  $('.users').removeClass('active');
+  $(this).addClass('active');
+
+  var tabNum = $(this).attr('data-contact');
+
+  $('.message-window').removeClass('active-mex');
+  $('.message-window').attr('data-contact').val(tabNum).addClass('active-mex');
+  // $('div[data-contact=1]').addClass('active-mex');
+
+  console.log(tabNum);
+
+});
+
 
 
 
