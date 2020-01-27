@@ -113,13 +113,13 @@ $(".search").focusout(function () {
 });
 
 
-// Freccia delete del messaggio
+// Azioni al click della freccia su ogni messaggio
 
 $(document).on('click', '.arrow-down', function() {
   $('.dropdown-delete').addClass('d-none');
   $(this).siblings('.dropdown-delete').removeClass('d-none');
 
-  if ($('.message-wrapper').hasClass('received')) {
+  if ($(this).parents('.message-wrapper').hasClass('received')) {
     $(this).siblings('.dropdown-delete').addClass('left-mex');
   } else {
     $(this).siblings('.dropdown-delete').addClass('right-mex');
@@ -127,17 +127,12 @@ $(document).on('click', '.arrow-down', function() {
 
 });
 
-
-
-
-
-// $('.message-window').on('click', function() {
-//   $('.dropdown-delete').addClass('d-none');
-//   });
-
 $('.delete').on('click', function() {
   $(this).parents('.message-wrapper').remove();
 });
+
+
+
 
 
 
