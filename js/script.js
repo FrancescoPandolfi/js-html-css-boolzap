@@ -147,7 +147,7 @@ $('.delete').on('click', function() {
 
 
 
-// Apre le diverse conversazioni
+// Azioni al click sulla lista costatti colonna sinistra
 $(document).on('click', '.users', function() {
 
   // attiva e toglie la classe attiva nella lista contatti
@@ -173,6 +173,14 @@ $(document).on('click', '.users', function() {
 
 
 // Cambia avatar e nome sulla conversazione
+
+var contenuto = $(this).find('h4').text();
+$('.row1-right-text').find('h4').text(contenuto);
+
+
+
+var img = $(this).find('img').attr('src');
+$('.user-icon-right').find('img').attr('src', img);
 
 
 });
