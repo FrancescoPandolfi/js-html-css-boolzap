@@ -59,7 +59,7 @@ function sendMessage() {
   messageTemplate.children('p').text(typedMessage);
   messageTemplate.children('time').text(time);
 
-  $('.message-window').append(messageTemplate);
+  $('.message-window.active-mex').append(messageTemplate);
   messageTemplate.removeClass('d-none').addClass('sent');
 
   $('.mex').val('');
@@ -73,9 +73,8 @@ function sendMessage() {
     var mexReceivedTemplate = $('.message-window + .message-wrapper').clone();
     mexReceivedTemplate.children('p').text(frasiCasuali[randomNum(frasiCasuali.length)] + ' 😀');
     mexReceivedTemplate.children('time').text(time);
-    $('.message-window').append(mexReceivedTemplate);
+    $('.message-window.active-mex').append(mexReceivedTemplate);
     mexReceivedTemplate.removeClass('d-none').addClass('received');
-    // mexReceivedTemplate.children('dropdown-delete').addClass('left-mex')
   }, 1000);
 };
 
@@ -128,7 +127,7 @@ $(document).on('click', '.arrow-down', function() {
 });
 
 $('.delete').on('click', function() {
-  $(this).parents('.message-wrapper').remove();
+  $(this).parent().parent().parent('.message-wrapper').remove();
 });
 
 
@@ -139,6 +138,8 @@ $(document).on('click', '.users', function() {
   // attiva e toglie la classe attiva nella lista contatti
   $('.users').removeClass('active');
   $(this).addClass('active');
+  $(this).prependTo($('.row4-left-users'));
+
 
   // rileva l'attributo degli elementi nella lista contatti
   var userAtt = $(this).attr('data-contact');
@@ -152,6 +153,12 @@ $(document).on('click', '.users', function() {
         $(this).addClass('active-mex')
       }
   });
+
+
+// Cambia avatar e nome sulla conversazione
+
+
+
 
 
 });
