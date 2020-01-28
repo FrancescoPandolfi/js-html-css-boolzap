@@ -256,6 +256,7 @@ body:after {
           line-height: 19px;
           color: #303030;
           position: relative;
+          filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));
         }
         .received {
           background-color: white;
