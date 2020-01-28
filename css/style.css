@@ -73,6 +73,9 @@ body:after {
     align-items: center;
     padding: 0 15px;
   }
+  .icons-row1 {
+    cursor: pointer;
+  }
 
 /* Row 2 left */
 .row2-left {
@@ -106,6 +109,7 @@ body:after {
         }
         .row2-left-text p:last-child:hover {
           text-decoration: underline;
+          cursor: pointer;
         }
 
 /* Row 3 left search */
@@ -330,6 +334,9 @@ body:after {
         .emoticons-icon {
           margin-right: 20px;
         }
+        .emoticons-icon:hover {
+          cursor: pointer;
+        }
         .input-message-bg {
           height: 42px;
           border-radius: 42px;
@@ -349,7 +356,7 @@ body:after {
         .send-message-icons {
           margin-left: 20px;
         }
-            .send-icon:hover {
+            .send-message-icons:hover {
               cursor: pointer;
             }
 
