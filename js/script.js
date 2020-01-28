@@ -15,14 +15,16 @@ $(document).ready(function () {
        }
   });
 
-
+// Azioni al click dell'icona per inviare messaggio
   $(document).on('click', '.send-icon', function() {
     sendMessage();
+    updateLastMex();
   });
 
   $(".mex").keyup(function(event) {
     if (event.keyCode === 13 && $(this).val().length > 0) {
         sendMessage();
+        updateLastMex();
     }
   });
 
@@ -78,6 +80,7 @@ function sendMessage() {
     $('.message-window.active-mex').append(mexReceivedTemplate);
     mexReceivedTemplate.removeClass('d-none').addClass('received');
     scrollMessage();
+    updateLastMex();
   }, 1000);
 };
 
@@ -94,9 +97,15 @@ function addZero(num) {
 function scrollMessage() {
    // altezza elemento conversazione attiva
     var convoHeight = $('.message-window.active-mex').height();
-    console.log(convoHeight);
     // spostiamo scroll di tutte le conversazioni
     $('.message-window').scrollTop(convoHeight);
+}
+
+// Prende l'ultimo messaggio scritto e lo aggiorna nella lista contatti sotto al nome corrispondente
+function updateLastMex () {
+  var lastMex = $('.message-window.active-mex').find('.message-wrapper:last-child .box-message').text();
+  var newMex = lastMex.substr(0, 25) + '...';
+  $('.users.active').find('p').text(newMex);
 }
 
 
@@ -118,9 +127,7 @@ $(".search").focus(function () {
   $('.icon-input img:first-child').hide();
   $('.icon-input img:last-child').show().removeClass('d-none');
   $(".row3-left-search").css( "background", "white" );
-});
-
-$(".search").focusout(function () {
+}).blur(function () {
   $('.icon-input img:first-child').show();
   $('.icon-input img:last-child').hide();
   $(".row3-left-search").css( "background", "#F7F7F7" );
@@ -142,7 +149,7 @@ $(document).on('click', '.arrow-down', function() {
 });
 
 
-
+// cancella il messaggio corrispondente
 $(document).on('click', '.delete', function() {
   $(this).parent().parent().parent('.message-wrapper').remove();
 });
@@ -155,10 +162,6 @@ $(document).on('click', '.users', function() {
   // attiva e toglie la classe attiva nella lista contatti
   $('.users').removeClass('active');
   $(this).addClass('active');
-
-  // // Sposta al primo posto il contatto cliccato
-  // $(this).prependTo($('.row4-left-users'));
-
 
   // rileva l'attributo degli elementi nella lista contatti
   var userAtt = $(this).attr('data-contact');
