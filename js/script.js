@@ -101,14 +101,13 @@ function scrollMessage() {
     $('.message-window').scrollTop(convoHeight);
 }
 
-// Prende l'ultimo messaggio scritto e lo aggiorna nella lista contatti sotto al nome corrispondente
+// Funzione che Prende l'ultimo messaggio scritto e lo aggiorna nella lista contatti sotto al nome corrispondente
 function updateLastMex () {
   var lastMex = $('.message-window.active-mex').find('.message-wrapper:last-child .box-message').text();
   var newMex = lastMex.substr(0, 25) + '...';
   $('.users.active').find('p').text(newMex);
   $('.users.active').prependTo('.row4-left-users');
 }
-
 
 
 
@@ -135,19 +134,20 @@ $(".search").focus(function () {
 });
 
 
-// Azioni al click della freccia su ogni messaggio
 
 $(document).on('click', '.arrow-down', function() {
-  $('.dropdown-delete').addClass('d-none');
-  $(this).siblings('.dropdown-delete').removeClass('d-none');
+    //toggleclass sull'elemento dropdown cliccato
+    $(this).siblings('.dropdown-delete').toggleClass('d-none');
+    //aggiungiamo la classe d-none ai dropdown di tutti gli altri message-wrapper
+    $(this).parents('.message-wrapper').siblings('.message-wrapper').find('.dropdown-delete').addClass('d-none');
 
-  if ($(this).parents('.message-wrapper').hasClass('received')) {
-    $(this).siblings('.dropdown-delete').addClass('left-mex');
-  } else {
-    $(this).siblings('.dropdown-delete').addClass('right-mex');
-  }
-
-});
+    // Mette la classe in base alla posizione del messaggio
+    if ($(this).parents('.message-wrapper').hasClass('received')) {
+      $(this).siblings('.dropdown-delete').addClass('left-mex');
+    } else {
+      $(this).siblings('.dropdown-delete').addClass('right-mex');
+    }
+  });
 
 
 // cancella il messaggio corrispondente
