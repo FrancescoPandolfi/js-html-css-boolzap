@@ -256,16 +256,38 @@ body:after {
           line-height: 19px;
           color: #303030;
           position: relative;
-          filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.15));
         }
         .received {
           background-color: white;
           align-self: flex-start;
           margin-right: 50px;
         }
+        .received::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -12px;
+          width: 0px;
+          height: 0px;
+          border-top: 20px solid #FFF;
+          border-left: 20px solid transparent;
+          border-bottom: 20px solid transparent;
+        }
         .sent {
           background-color: #D4F7C1;
           align-self: flex-end;
+        }
+        .sent::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: -12px;
+          width: 0px;
+          height: 0px;
+          border-top: 20px solid #D4F7C1;
+          border-right: 20px solid transparent;
+          border-bottom: 20px solid transparent;
         }
             p.box-message {
             }
