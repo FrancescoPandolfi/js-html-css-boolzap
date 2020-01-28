@@ -141,6 +141,8 @@ $(document).on('click', '.arrow-down', function() {
 
 });
 
+
+
 $(document).on('click', '.delete', function() {
   $(this).parent().parent().parent('.message-wrapper').remove();
 });
@@ -154,8 +156,8 @@ $(document).on('click', '.users', function() {
   $('.users').removeClass('active');
   $(this).addClass('active');
 
-  // Sposta al primo posto il contatto cliccato
-  $(this).prependTo($('.row4-left-users'));
+  // // Sposta al primo posto il contatto cliccato
+  // $(this).prependTo($('.row4-left-users'));
 
 
   // rileva l'attributo degli elementi nella lista contatti
