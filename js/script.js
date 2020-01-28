@@ -106,6 +106,7 @@ function updateLastMex () {
   var lastMex = $('.message-window.active-mex').find('.message-wrapper:last-child .box-message').text();
   var newMex = lastMex.substr(0, 25) + '...';
   $('.users.active').find('p').text(newMex);
+  $('.users.active').prependTo('.row4-left-users');
 }
 
 
